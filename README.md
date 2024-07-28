@@ -1,4 +1,4 @@
-Flight Status Application
+#Flight Status Application
 Overview
 The Flight Status Application provides real-time flight status updates and notifications to passengers. It features a React.js frontend for displaying flight information and a Python Flask backend for managing API requests, real-time updates, and notifications.
 
