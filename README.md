@@ -1,4 +1,4 @@
-#Flight Status Application
+Flight Status Application
 Overview
 The Flight Status Application provides real-time flight status updates and notifications to passengers. It features a React.js frontend for displaying flight information and a Python Flask backend for managing API requests, real-time updates, and notifications.
 
@@ -20,3 +20,83 @@ Features
 Real-time Flight Status Updates: Displays current flight status, including delays, cancellations, and gate changes.
 Push Notifications: Sends notifications via SMS and app notifications for flight status changes.
 Integration with Airport Systems: Retrieves flight data from a PostgreSQL database.
+Installation
+Frontend Setup
+Clone the Repository
+
+bash
+Copy code
+git clone <repository-url>
+cd flight-status-project/frontend
+Install Dependencies
+
+bash
+Copy code
+npm install
+Run the Application
+
+bash
+Copy code
+npm start
+The frontend will be available at http://localhost:3000.
+
+Backend Setup
+Set Up Virtual Environment
+
+bash
+Copy code
+cd flight-status-project/backend
+python -m venv venv
+source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+Install Dependencies
+
+bash
+Copy code
+pip install -r requirements.txt
+Set Up Database
+
+Ensure PostgreSQL is running and execute the following SQL script to set up the database schema:
+
+bash
+Copy code
+psql -U <your-username> -d <your-database> -f database/schema.sql
+Run the Application
+
+bash
+Copy code
+python app.py
+The backend will be available at http://localhost:5000.
+
+Configuration
+Firebase Cloud Messaging: Update notifications.py with your Firebase service account credentials.
+Twilio: Update sms.py with your Twilio account SID, auth token, and phone number.
+File Structure
+csharp
+Copy code
+flight-status-project/
+├── frontend/                       # React.js Frontend
+│   ├── public/
+│   ├── src/
+│   │   ├── components/
+│   │   │   └── FlightStatusComponent.jsx
+│   │   ├── App.css
+│   │   ├── App.js
+│   │   ├── index.css
+│   │   └── index.js
+│   ├── .gitignore
+│   ├── package.json
+│   ├── README.md
+│   └── node_modules/
+├── backend/                       # Python Flask Backend
+│   ├── app.py
+│   ├── notifications.py
+│   ├── sms.py
+│   ├── requirements.txt
+│   ├── venv/
+│   └── .gitignore
+├── database/                      # Database scripts
+│   └── schema.sql
+└── .gitignore
+Additional Information
+Real-time Updates: Achieved using Socket.IO for bidirectional communication between the frontend and backend.
+Notifications: Configured to send updates via both push notifications and SMS to ensure users are informed of status changes.
