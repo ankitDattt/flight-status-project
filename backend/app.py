@@ -28,12 +28,15 @@ def get_flight_status(flight_id):
 @socketio.on('connect')
 def handle_connect():
     # Logic to handle new client connection
-    pass
+    print('Client Connected')
+    emit('response',{'message': 'connected to the serversuccessfully!'})
+    #pass
 
 @socketio.on('disconnect')
 def handle_disconnect():
     # Logic to handle client disconnection
-    pass
+    print('Client Disconnected')
+    #pass
 
 if __name__ == '__main__':
     socketio.run(app, debug=True)
